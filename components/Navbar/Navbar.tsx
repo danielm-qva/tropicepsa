@@ -1,12 +1,13 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import {Calendar, Menu, Phone, X} from "lucide-react"
+import {Menu, Phone, X} from "lucide-react"
 import {useState} from "react"
+import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
 
 const logo = process.env.NEXT_PUBLIC_APP_LOGO || '/images/logo.png'
 
-export function Navbar() {
+export function Navbar({locale}: { locale: string }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
@@ -55,20 +56,7 @@ export function Navbar() {
                     </div>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <Link
-                            href="tel:+1234567890"
-                            className="flex items-center gap-2 text-sm font-light text-foreground/70 hover:text-foreground transition-colors duration-300"
-                        >
-                            <Phone className="h-4 w-4"/>
-                            <span className="hidden lg:inline">Llamar</span>
-                        </Link>
-                        <Link
-                            href="/reservar"
-                            className="flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground rounded-full text-sm font-light hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                        >
-                            <Calendar className="h-4 w-4"/>
-                            Reservar
-                        </Link>
+                        <LocaleSwitcher currentLocale={locale}/>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -76,7 +64,7 @@ export function Navbar() {
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
                         aria-label="Toggle menu"
-                    >
+                    >l
                         {isMenuOpen ? <X className="h-5 w-5"/> : <Menu className="h-5 w-5"/>}
                     </button>
                 </div>
@@ -125,14 +113,7 @@ export function Navbar() {
                                 <Phone className="h-4 w-4"/>
                                 Llamar ahora
                             </Link>
-                            <Link
-                                href="/reservar"
-                                className="flex items-center justify-center gap-2 w-full px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-light hover:bg-primary/90 transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <Calendar className="h-4 w-4"/>
-                                Reservar cita
-                            </Link>
+
                         </div>
                     </div>
                 </div>

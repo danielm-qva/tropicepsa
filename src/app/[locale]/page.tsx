@@ -1,10 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import {useTranslations} from "next-intl";
-import AboutPage from "../../components/About/About";
-import WhyChoose from "../../components/WhyChoose/WhyChoose";
-import SectionProcess from "../../components/Process/ProcesSection";
-import ProductGallery from "../../components/ProductiGalery/ProductGallery";
+import AboutPage from "../../../components/About/About";
+import WhyChoose from "../../../components/WhyChoose/WhyChoose";
+import SectionProcess from "../../../components/Process/ProcesSection";
+import ProductGallery from "../../../components/ProductiGalery/ProductGallery";
 
 export default function Home() {
     const t = useTranslations('HomePage');
