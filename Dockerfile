@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json*  ./
 
-RUN npm install
+RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -14,7 +14,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build
+ENV NODE_ENV=production
+
+RUN npx next build --turbopack
 
 FROM base AS runner
 WORKDIR /app
