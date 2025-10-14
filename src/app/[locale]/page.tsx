@@ -4,8 +4,9 @@ import AboutPage from "../../../components/About/About";
 import WhyChoose from "../../../components/WhyChoose/WhyChoose";
 import SectionProcess from "../../../components/Process/ProcesSection";
 import ProductGallery from "../../../components/ProductiGalery/ProductGallery";
-import {Facebook, Gift, Instagram, MessageCircle, Sparkles, Star, Twitter} from "lucide-react";
+import {Facebook, Gift, Instagram, Sparkles, Star, Twitter} from "lucide-react";
 import Testimonials from "../../../components/Testimonials/Testimonials";
+import Floating from "../../../components/Floating Button/Floating";
 
 export default function Home() {
     // const t = useTranslations('HomePage');
@@ -197,12 +198,7 @@ export default function Home() {
             <Testimonials/>
 
             {/* Floating Contact Button */}
-            <div className="fixed bottom-8 right-8 z-50 animate-bounce">
-                <button
-                    className="group relative w-16 h-16 bg-primary text-primary-foreground rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"/>
-                </button>
-            </div>
+            <Floating/>
 
 
             {/* Social Media Bar */}
