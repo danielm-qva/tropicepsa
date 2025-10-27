@@ -15,7 +15,8 @@ export function Navbar({locale}: { locale: string }) {
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex-shrink-0 transition-opacity hover:opacity-80 duration-300">
+                    <Link href={`/${locale}`}
+                          className="flex-shrink-0 transition-opacity hover:opacity-80 duration-300">
                         <Image src={logo} alt="s" width={180} height={40} className="h-12 w-auto" priority/>
                     </Link>
 
@@ -59,7 +60,6 @@ export function Navbar({locale}: { locale: string }) {
                         <LocaleSwitcher currentLocale={locale}/>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
@@ -70,7 +70,6 @@ export function Navbar({locale}: { locale: string }) {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {isMenuOpen && (
                 <div
                     className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-md animate-in slide-in-from-top-2 duration-300">

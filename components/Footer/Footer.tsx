@@ -2,9 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import {Mail, MapPin, Phone} from "lucide-react"
 
-
 const logo = process.env.NEXT_PUBLIC_APP_LOGO || '/images/logo.png'
-const cel = process.env.NEXI_PUBLIC_PHONE || '+1 (555) 123-4567'
+const cel = process.env.NEXT_PUBLIC_PHONE || '+1 (555) 123-4567'
 
 export default function Footer() {
     return (
@@ -103,7 +102,7 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
                                 <Phone className="h-4 w-4 text-primary mt-0.5 flex-shrink-0"/>
-                                <span className="text-sm text-muted-foreground">{cel}</span>
+                                <span className="text-sm text-muted-foreground">{`+${cel}`}</span>
                             </li>
                             <li
                                 className="flex items-start gap-3">

@@ -6,8 +6,8 @@ import Flag from 'react-world-flags';
 
 
 const LocaleFlagMap: Record<string, string> = {
-    en: 'US', // inglés → USA
-    es: 'ES', // español → España
+    en: 'US',
+    es: 'ES',
 };
 
 const LocaleSwitcher = ({currentLocale}: { currentLocale: string }) => {
@@ -19,7 +19,6 @@ const LocaleSwitcher = ({currentLocale}: { currentLocale: string }) => {
         if (newLocale === currentLocale) return;
 
         const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
-
         startTransition(() => {
             router.push(newPath);
         });

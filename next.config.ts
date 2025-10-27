@@ -6,13 +6,13 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
     /* config options here */
     output: 'standalone',
-    redirects: async () => {
-        return [{
-            source: '/',
-            destination: '/es',
-            permanent: false,
-        }]
-    }
+    // redirects: async () => {
+    //     return [{
+    //         source: '/',
+    //         destination: '/es',
+    //         permanent: false,
+    //     }]
+    // }
 };
 
 export default withNextIntl(nextConfig);

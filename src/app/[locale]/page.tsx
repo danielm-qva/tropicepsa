@@ -24,8 +24,7 @@ export default function Home() {
                         priority
                     />
                     {/* Overlay gradient */}
-                    <div
-                        className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"/>
+                    <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"/>
                 </div>
 
 
